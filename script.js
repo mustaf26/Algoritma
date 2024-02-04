@@ -29,7 +29,7 @@ addButton.addEventListener('click', () => {
 
     setTimeout(() => {
       alert.remove();
-    }, 3000); // Remove alert after 3 seconds
+    }, 3000); // Remove alert after 4 seconds
   }
 });
 taskInput.addEventListener('keypress', (event) => {
