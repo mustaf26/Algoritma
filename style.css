@@ -1,0 +1,14 @@
+.alert-warning {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .img-fluid {
+    width: 200px; /* Fixed image size */
+  }
+  
+  h1 {
+    text-align: center; /* Centered text */
+  }

@@ -1,73 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            height: 100vh;
-            margin: 0;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        #clock {
-            font-size: 24px;
-        }
-
-        #date {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-    <script>
-        // Prompt the user for their name
-        const userName = prompt("What is your name?");
-
-        // Display a personalized greeting
-        const greetingHeader = document.createElement("h1");
-        greetingHeader.textContent = `Merhaba ${userName}! Sayfaya Hoşgeldin`;
-        document.body.appendChild(greetingHeader);
-
-        // Display a clock
-        const clockElement = document.createElement("p");
-        clockElement.id = "clock";
-        document.body.appendChild(clockElement);
-
-        // Display the date
-        const dateElement = document.createElement("p");
-        dateElement.id = "date";
-        document.body.appendChild(dateElement);
-
-        function updateClock() {
-            const now = new Date();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            clockElement.textContent = `Saat ${hours}:${minutes}:${seconds} `;
-
-            const day = now.getDate().toString().padStart(2, '0');
-            const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
-            const year = now.getFullYear();
-            dateElement.textContent = ` ${day}:${month}:${year} tarihinde sitedesin`;
-        }
-
-        // Update the clock every second
-        setInterval(updateClock, 1000);
-
-        // Initial call to set the clock immediately
-        updateClock();
-    </script>
-
+<body style="margin-top: 5px; background-color: #FBF9F1;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <img src="https://cdn-icons-png.flaticon.com/512/6619/6619606.png" alt="" class="img-fluid img-thumbnail" style="display: block; margin-top: 20px; margin-left: auto; margin-right: auto; background-color: #FBF9F1;">
+        <h1 class="text-center">YAPILACAKLAR</h1>
+        <div class="text-body-secondary input-group mb-3">
+          <input type="text" class="form-control rounded-pill" id="taskInput" placeholder="Yapılacaklar">
+          <button class="btn btn-primary" id="addButton" style="margin-left: 10px;">Ekle</button> </div>
+        <ul class="list-group" id="taskList"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
